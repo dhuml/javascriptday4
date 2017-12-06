@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>table creation</title>
+
+	<style type="text/css">
+		
+		table {
+			border:1px solid black;
+		}
+		tr {
+			border:1px solid green;
+		}
+		td {
+			border:1px solid red;
+		}
+	</style>
+</head>
+<body>
+	
+
+	<span>number of rows</span>
+	<input type="text" placeholder="number of rows" id="rownumber"> <br>
+	<span>number of columns</span>
+	<input type="text" placeholder="number of columns" id="colnumber"> <br>
+	<input type="submit" id="create_the_table" value="create table">
+	<div id="tablediv">
+		
+	</div>
+
+
+
+	<script type="text/javascript">
+
+		
+
+		function getUserinput() {
+		
+		rows = Number(document.getElementById("rownumber").value);
+		columns = Number(document.getElementById("colnumber").value);
+
+		console.log(rows);
+		console.log(columns);
+		}
+
+		var input = document.getElementById("create_the_table");
+		input.addEventListener("click", function(){
+			getUserinput()
+			createTable(), false});
+
+
+		function createTable() {
+		 	tablevar = document.createElement("table");
+			
+		 	element = document.getElementById("tablediv");
+		 	element.appendChild(tablevar);
+		 	
+		 	for (i = 0; i < rows; i++) {
+					console.log(i);
+					row = document.createElement("tr");
+					tablevar.appendChild(row);
+		 			
+		 			for (j = 0; j < columns; j++) {
+						column = document.createElement("td");
+						row.appendChild(column);
+						coltext = document.createTextNode("Row" + i + " -- Column" + j);
+						column.appendChild(coltext);
+		 	}
+		 	}
+		 	}
+
+		
+
+	</script>
+</body>
+</html>

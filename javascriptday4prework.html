@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		events
+	</title>
+</head>
+<body>
+
+	<input type="submit" onclick="sayHello()" value="hello">
+
+
+	<script>
+		function sayHello() {
+			console.log("hello from the console.")
+		}			
+	</script>
+
+
+	<input type="submit" id="login" value="login">
+
+	<script type="text/javascript">
+
+		function checkUser() {
+			console.log("you are logged in");
+		}
+
+		var button1 = 
+			document.getElementById("login");
+			button1.onclick = checkUser;
+
+	</script>
+
+
+	<input type="submit" id="username" value="Username"/>
+
+
+	<script>
+		function printUsername() {
+			console.log("Print the Username");
+		}
+
+		var button2 = document.getElementById("username");
+
+		button2.addEventListener("click", printUsername, false);
+
+	</script>
+</body>
+</html>
